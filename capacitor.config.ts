@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.ismael8421.app',
+  appId: 'com.myapp.app',
   appName: 'app-camara',
-  webDir: 'dist'
+  webDir: 'dist/app-camara/browser'
 };
 
 export default config;
