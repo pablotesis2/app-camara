@@ -1,0 +1,28 @@
+<div class="camera-container">
+    <!-- Imagen capturada más reciente -->
+    <div *ngIf="imgUrl" class="current-image-container">
+        <img [src]="imgUrl" alt="Captured Image" class="captured-image">
+    </div>
+
+    <!-- Botón para tomar foto -->
+    <button (click)="takePicture()" class="take-picture-button">📷 Toma una Foto</button>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Galería de fotos históricas -->
+    <div class="image-gallery" *ngIf="imageHistory.length > 0">
+        <h3>Galería de Fotos</h3>
+        <button (click)="clearHistory()" class="clear-history-button">🗑️ Limpiar Galería</button>
+        <div class="gallery-grid">
+            <img 
+                *ngFor="let image of imageHistory" 
+                [src]="image" 
+                alt="Foto histórica" 
+                class="gallery-image"
+            >
+        </div>
+    </div>
+</div>
